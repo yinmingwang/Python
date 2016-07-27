@@ -45,7 +45,7 @@ def str2int(s):
     return reduce(fn, map(char2num,s))
 def str2float(s):
     temp = s.split('.')
-    print(map(char2num,temp[1]))
+    #(map(char2num,temp[1]))
     first = int(reduce(fn,map(char2num,temp[0])))
     second = int(reduce(fn,map(char2num,temp[1])))
     t = 1.0
@@ -61,10 +61,21 @@ def prod(L):
     def multiply(x,y):
         return x*y
     return reduce(multiply,L)
+def by_score(t):
+    return t[1]
+def by_name(t):
+    return t[0]
 if __name__ == "__main__":
      s = '123.456'
-     print(str2float(s))
+     #print(str2float(s))
      N = [1,2,3,4,5,6,7]
-     L = ['adam', 'LISA', 'barT']
-     print(list(map(change,L)))
-     print(prod(N))
+     #L = [2,-1,5,88,-99]
+     L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+     #L = ['adam', 'LISA', 'barT']
+     str1=['bob', 'about', 'Zoo', 'Credit']
+     print(sorted(str1,key=str.lower,reverse=True))
+     #print(L[0][1])
+     print(sorted(L,key=by_score))
+     print(sorted(L,key= by_name))
+     #print(list(map(change,L)))
+     #print(prod(N))
